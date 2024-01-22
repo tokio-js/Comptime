@@ -16,7 +16,7 @@ export function add(id: string, value: object | (() => object)): void {
     comptimeItems[id] = value;
 }
 
-export function ComptimePlugin(namespace: RegExp = /^\$COMPTIME$/): ComptimePlugin {
+export function plugin(namespace: RegExp = /^\$COMPTIME$/): ComptimePlugin {
     let res = "";
     for(const [key, value] of Object.entries(comptimeItems)) {
         res += `export const ${key} = ${JSON.stringify(value)};\n`;
@@ -36,4 +36,4 @@ export function ComptimePlugin(namespace: RegExp = /^\$COMPTIME$/): ComptimePlug
     }
 };
 
-export default ComptimePlugin;
+export default plugin;
