@@ -1,0 +1,7 @@
+# IDE
+.vscode
+.vs
+
+# Compiled / Bundled Files / Logs
+/.kconk
+*.lock
